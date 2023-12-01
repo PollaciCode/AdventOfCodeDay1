@@ -1,0 +1,24 @@
+i = input()
+CalibrationNumbersList = []
+
+while i != ' ':
+  CalibrationNumbersList.append(str(i))
+  i = input()
+
+CV = []
+
+for n in range(0,len(CalibrationNumbersList)):
+  RawCalibrationValue = CalibrationNumbersList[n]
+  CalibrationValue = [int(s) for s in RawCalibrationValue if s.isdigit()]
+  CV.append(int(''.join([str(i) for i in CalibrationValue])))
+
+CV1 = []
+
+for n in range(0, len(CV)):
+  Last = str(CV[n])[0]
+  First = str(CV[n])[-1]
+  CV1.append(int(Last + First))
+
+
+Total = sum(CV1)
+print(Total)
